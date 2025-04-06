@@ -1,5 +1,51 @@
-# Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# 天气查询应用（Weather App）
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+### **核心功能：**
+
+***城市搜索** ：支持关键字输入，自动补全城市名称
+
+***当前天气信息** ：展示温度、湿度、风速、天气描述等
+
+***未来天气预报** ：展示未来几天天气变化（折线图或图标方式）
+
+***地理定位** ：自动获取用户当前地理位置并显示对应天气
+
+***动态界面效果** ：根据天气情况切换背景或图标
+
+### **实现步骤：**
+
+1.**项目初始化**
+
+* 选择前端框架（React、Vue 等）初始化项目。
+* 注册并获取天气 API（如 OpenWeatherMap）的访问密钥。
+
+2.**城市搜索与自动补全**
+
+* 开发搜索组件，监听输入框变化并调用城市自动补全接口（或内置常见城市列表）。
+* 展示下拉建议列表，点击后确认搜索城市。
+
+3.**天气数据获取**
+
+* 使用 fetch/axios 调用天气 API，获取当前天气和预报数据。
+* 实现数据的错误处理和加载状态显示。
+
+4.**当前天气展示**
+
+* 设计展示区域，显示温度、天气描述、湿度、风速等信息。
+* 集成天气图标（可以利用图标库或 SVG 图标），让界面更直观。
+
+5.**未来天气预报展示**
+
+* 使用卡片或图表展示未来几天天气情况。
+* 可采用简单折线图展示温度变化或以图标形式显示每日天气概况。
+
+6.**地理定位功能**
+
+* 调用浏览器的 Geolocation API，获取用户当前位置。
+* 将获取到的坐标传递给天气 API，展示本地天气信息。
+
+7.**动态界面与响应式设计**
+
+* 根据天气情况（如晴天、阴天、雨天）调整背景图片或颜色。
+* 优化页面在手机和平板上的显示效果，确保交互流畅。
