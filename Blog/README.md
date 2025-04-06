@@ -1,34 +1,5 @@
+# Vue 3 + TypeScript + Vite
 
-# 简易博客系统（Mini Blog）
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-### **核心功能：**
-
-* **文章列表展示** ：显示文章标题、简介、发布时间
-* **文章详情页** ：Markdown 渲染文章内容，支持图片、代码高亮
-* **文章管理后台（可选）** ：支持文章的新增、编辑与删除
-* **评论系统** ：允许用户在文章下方留言评论（或接入第三方评论插件）
-* **SEO 与 SSR** ：提高页面加载速度与搜索引擎优化
-
-### **实现步骤：**
-
-1. **项目初始化**
-   * 使用 Gatsby、Next.js 或 Nuxt.js 等框架构建项目，利用其静态生成或服务端渲染优势。
-   * 搭建项目目录结构，规划页面路由（文章列表页、详情页）。
-2. **文章内容管理**
-   * 采用 Markdown 文件管理文章内容，或搭建简单的后台接口。
-   * 使用 Markdown 解析库（如 remark 或 markdown-it）渲染文章内容。
-3. **文章列表页开发**
-   * 设计文章列表布局，显示标题、摘要、发布时间。
-   * 实现分页或无限滚动，优化大数据量展示。
-4. **文章详情页开发**
-   * 构建文章详情页面，支持 Markdown 渲染与代码高亮。
-   * 根据需要添加相关文章推荐、文章目录等增强阅读体验的功能。
-5. **评论系统集成**
-   * 可选择搭建简单的评论接口，或接入第三方服务（如 Disqus）。
-   * 设计评论展示区，支持用户发表评论和回复。
-6. **SEO 与 SSR 优化**
-   * 配置 meta 标签、动态标题、描述等以提高 SEO 效果。
-   * 利用框架内置的 SSR/静态生成优化页面加载速度。
-7. **部署与后续维护**
-   * 将项目部署到 Netlify、Vercel 或其他静态网站托管平台。
-   * 定期更新文章内容和项目维护，确保内容新鲜和技术跟进。
+Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).

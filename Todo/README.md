@@ -1,33 +1,5 @@
-# 任务管理工具（Todo/Task Manager）
+# Vue 3 + TypeScript + Vite
 
-### **核心功能：**
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-* **任务的增删改查** ：新增任务、编辑任务内容、删除任务
-* **任务状态管理** ：标记任务完成/未完成，动态改变样式
-* **任务排序与拖拽** ：支持手动拖拽排序
-* **任务过滤** ：根据任务状态进行筛选（全部、进行中、已完成）
-* **数据持久化** ：通过 LocalStorage 或简单后端 API 保存任务数据
-
-### **实现步骤：**
-
-1. **项目初始化**
-   * 创建项目框架，选择 React/Vue 等技术栈。
-   * 确定状态管理方案（如 Redux、Vuex 或 Context API）。
-2. **任务输入与列表展示**
-   * 构建任务输入组件，实现任务名称和描述的录入。
-   * 设计任务列表组件，展示所有任务，采用列表或卡片形式。
-3. **任务状态更新**
-   * 为每个任务添加“完成”按钮或复选框，点击后更新任务状态并动态改变样式。
-   * 实现任务编辑功能，允许用户点击任务内容后进入编辑状态。
-4. **任务删除与排序**
-   * 为任务卡片添加删除按钮，点击后移除任务。
-   * 集成拖拽功能（如 react-beautiful-dnd 或 Vue.Draggable），实现任务排序。
-5. **任务过滤功能**
-   * 增加过滤按钮或下拉选择，根据状态筛选任务列表。
-   * 确保过滤功能与排序功能互不干扰。
-6. **数据持久化**
-   * 利用 LocalStorage 保存任务数据，确保页面刷新后数据依然存在。
-   * 或者模拟后端 API，通过 fetch/axios 实现数据的读写操作。
-7. **界面优化与用户体验**
-   * 添加合适的动画效果（如任务添加时的渐入效果）。
-   * 优化交互体验，确保在移动设备上也能方便操作。
+Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
