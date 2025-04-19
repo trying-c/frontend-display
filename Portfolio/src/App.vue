@@ -1,12 +1,26 @@
 <script setup lang="ts">
+import Home from './views/home.vue'
+import About from './views/about.vue'
+import Portfolio from './views/portfolio.vue'
 import { themeOverrides, darkThemeOverrides } from './assets/styles/theme'
 import { darkTheme, lightTheme } from 'naive-ui';
 import { computed, ref, type Ref } from 'vue';
 
 const title: Ref = ref('Trying Page')
 
+const main: Ref = ref<HTMLElement | null>(null)
+
 function onMenuChange(value: string) {
     console.log(value)
+    if (main.value) {
+        const target = document.getElementById(value)
+        if (target) {
+            main.value.scrollTo({
+                top: target.offsetTop,
+                behavior: 'smooth'
+            })
+        }
+    }
 }
 const menuOptions = ref([
     {
@@ -18,8 +32,8 @@ const menuOptions = ref([
         key: 'about',
     },
     {
-        label: 'Contact',
-        key: 'contact',
+        label: 'Portfolio',
+        key: 'portfolio',
     }
 ])
 
@@ -47,7 +61,7 @@ function toggleTheme() {
 <template>
     <n-config-provider class="base__app" :theme="theme" :theme-overrides="isDark ? darkThemeOverrides : themeOverrides">
 
-        <div class="base__header">
+        <n-layout-header bordered class="base__header">
             <div class="base__header__title">
                 <n-gradient-text>
                     <span>{{ title }}</span>
@@ -58,50 +72,62 @@ function toggleTheme() {
                     @update:value="onMenuChange" />
             </div>
             <div class="base__header__util">
-                <n-button class="base__header__btn" text @click="">English</n-button>
+                <!-- <n-button class="base__header__btn" text @click="">English</n-button> -->
                 <n-button class="base__header__btn" text @click="toggleTheme">{{ isDark ? '浅色' : '深色' }}</n-button>
             </div>
-        </div>
-
-
+        </n-layout-header>
+        <n-layout-content content-class="base__main" :native-scrollbar="false"
+            :content-style="{ height: 'calc(100vh - 60px)' }" ref="main">
+            <Home class="base__main__item" id="home" />
+            <About class="base__main__item" id="about" />
+            <Portfolio class="base__main__item" id="portfolio" />
+        </n-layout-content>
 
         <n-global-style />
     </n-config-provider>
 </template>
 
 <style lang="scss" scoped>
-.base__app {
-    height: 100vh;
-}
-
-.base__header {
-    margin: 0 auto;
-    padding: 8px 16px;
-    height: 60px;
-
-    @include flex();
-    align-items: center;
-
-
-    &__title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-right: 24px;
+.base {
+    &__app {
+        width: 100%;
+        height: 100vh;
+        @include flex(column);
     }
 
-    &__menu {
-        flex: 1;
+    &__header {
+        padding: 8px 16px;
+        height: 60px;
+        width: 100%;
+
         @include flex();
-        justify-content: center;
+        align-items: center;
+
+
+        &__title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        &__menu {
+            margin: 0 auto;
+        }
+
+        &__btn {
+            margin: 0 16px;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+        }
     }
 
-    &__btn {
-        margin: 0 16px;
-        font-weight: 500;
-        transition: all 0.3s ease-in-out;
+    &__main {
+        width: 100%;
 
-
+        &__item {
+            height: 100%;
+        }
     }
+
 }
 
 .logo {

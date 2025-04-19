@@ -5,8 +5,11 @@ function showAlert() {
 </script>
 
 <template>
-    <n-button type="primary" size="medium" @click="showAlert">作品集</n-button>
+    <div>
+        <n-button type="primary" size="medium" @click="showAlert">作品集</n-button>
 
+
+    </div>
 </template>
 
 <style lang="scss" scoped></style>

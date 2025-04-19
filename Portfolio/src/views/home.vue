@@ -5,7 +5,9 @@ function showAlert() {
 </script>
 
 <template>
-    <n-button type="primary" size="medium" @click="showAlert">首页</n-button>
+    <div>
+        <n-button type="primary" size="medium" @click="showAlert">首页</n-button>
+    </div>
 
 </template>
 
