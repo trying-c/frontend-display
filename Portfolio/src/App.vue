@@ -47,6 +47,7 @@ const isDark = computed(() => {
     return themeKey.value === 'dark';
 })
 
+
 function toggleTheme() {
     if (themeKey.value === 'light') {
         themeKey.value = 'dark';
@@ -56,6 +57,7 @@ function toggleTheme() {
         theme.value = lightTheme;
     }
     localStorage.setItem('themeKey', themeKey.value)
+    location.reload();
 }
 
 onBeforeMount(() => {
@@ -70,7 +72,8 @@ onBeforeMount(() => {
 </script>
 
 <template>
-    <n-config-provider class="base__app" :theme="theme" :theme-overrides="isDark ? darkThemeOverrides : themeOverrides">
+    <n-config-provider class="base__app" :class="{ 'dark-mode': isDark }" :theme="theme"
+        :theme-overrides="isDark ? darkThemeOverrides : themeOverrides">
 
         <n-layout-header bordered class="base__header">
             <div class="base__header__title">

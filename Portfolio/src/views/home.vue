@@ -9,7 +9,7 @@
                 <h1>Hello, 欢迎来到Trying Page!</h1>
             </n-gradient-text>
             <div style="margin-top: 3rem;">
-                <p>我是Trying, 前端开发工程师, 专注全栈实践与性能优化 </p>
+                <p>我是Trying, 前端开发工程师, 专注前端实践与性能优化 </p>
                 <p><strong>用代码构建高效体验, 期待与您碰撞灵感！</strong></p>
             </div>
         </div>
