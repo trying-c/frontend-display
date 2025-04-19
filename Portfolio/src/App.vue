@@ -3,10 +3,10 @@ import Home from './views/home.vue'
 import About from './views/about.vue'
 import Portfolio from './views/portfolio.vue'
 import { themeOverrides, darkThemeOverrides } from './assets/styles/theme'
-import { darkTheme, lightTheme } from 'naive-ui';
-import { computed, ref, type Ref } from 'vue';
+import { darkTheme, lightTheme, type GlobalTheme } from 'naive-ui';
+import { computed, onBeforeMount, ref, type Ref } from 'vue';
 
-const title: Ref = ref('Trying Page')
+const title: Ref = ref<String>('Trying Page')
 
 const main: Ref = ref<HTMLElement | null>(null)
 
@@ -22,7 +22,7 @@ function onMenuChange(value: string) {
         }
     }
 }
-const menuOptions = ref([
+const menuOptions: Ref = ref([
     {
         label: 'Home',
         key: 'home',
@@ -37,17 +37,17 @@ const menuOptions = ref([
     }
 ])
 
-const activeKey = ref('home')
+const activeKey: Ref = ref<String>('home')
 
-const theme = ref(lightTheme);
-const themeKey = ref('light');
+
+const theme: Ref<GlobalTheme> = ref(lightTheme);
+const themeKey: Ref = ref('light');
 
 const isDark = computed(() => {
     return themeKey.value === 'dark';
 })
 
 function toggleTheme() {
-
     if (themeKey.value === 'light') {
         themeKey.value = 'dark';
         theme.value = darkTheme;
@@ -55,7 +55,18 @@ function toggleTheme() {
         themeKey.value = 'light';
         theme.value = lightTheme;
     }
+    localStorage.setItem('themeKey', themeKey.value)
 }
+
+onBeforeMount(() => {
+    const storageTheme = localStorage.getItem('themeKey')
+    if (storageTheme) {
+        themeKey.value = storageTheme
+        theme.value = storageTheme === 'dark' ? darkTheme : lightTheme
+    } else {
+        localStorage.setItem('themeKey', 'light')
+    }
+})
 </script>
 
 <template>
@@ -125,6 +136,7 @@ function toggleTheme() {
 
         &__item {
             height: 100%;
+            padding: 20px;
         }
     }
 
