@@ -28,12 +28,12 @@ const menuOptions: Ref = ref([
         key: 'home',
     },
     {
-        label: 'About',
-        key: 'about',
-    },
-    {
         label: 'Portfolio',
         key: 'portfolio',
+    },
+    {
+        label: 'About',
+        key: 'about',
     }
 ])
 
@@ -90,8 +90,8 @@ onBeforeMount(() => {
         <n-layout-content content-class="base__main" :native-scrollbar="false"
             :content-style="{ height: 'calc(100vh - 60px)' }" ref="main">
             <Home class="base__main__item" id="home" />
-            <About class="base__main__item" id="about" />
             <Portfolio class="base__main__item" id="portfolio" />
+            <About class="base__main__item" id="about" />
         </n-layout-content>
 
         <n-global-style />
